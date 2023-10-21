@@ -1,0 +1,38 @@
+
+<ion-content [fullscreen]="true">
+
+  <ng-container >
+    <ion-card-content >
+      <ion-item >
+        <ion-label>Email:</ion-label>
+        <ion-input [(ngModel)]="email" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Contraseña:</ion-label>
+        <ion-input [(ngModel)]="contrasena" type="password"></ion-input>
+      </ion-item>
+
+      <ion-card  #card>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="login()" expand="full">Acceder</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-card-content>   
+  
+
+</ng-container>
+  <!-- <ion-button (click)="play()">Play</ion-button> -->
+
+ 
+
+</ion-content>
+
+<ion-footer>
+  
+    <ion-button (click)="loginRegistro()" expand="block" class="ion-button-registro" fill="outline">¿No tienes cuenta? Regístrate aquí.</ion-button>
+    <ion-button (click)="loginRecuperacion()" expand="block" class="ion-button-recuperacion" fill="outline">¿Olvidaste tu contraseña? Haz click aquí.</ion-button>
+ 
+</ion-footer>
+

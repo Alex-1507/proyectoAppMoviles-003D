@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button (click)="menuPrincipal()" slot="start"> <ion-icon name="arrow-back-outline" ></ion-icon>Menú principal.</ion-button>
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+
+        
+        <ion-icon name="home" ></ion-icon>
+        <h2>Origen:</h2>
+        <ion-select [(ngModel)]="origen" >
+          <ion-select-option value="" disabled selected>  - Seleccione comuna de origen</ion-select-option>
+          <ion-select-option value="opcion1">La Florida</ion-select-option>
+          <ion-select-option value="opcion2">Peñalolen</ion-select-option>
+          <ion-select-option value="opcion2">La Granja</ion-select-option>
+          <ion-select-option value="opcion2">San Miguel</ion-select-option>
+        </ion-select>
+        </ion-item>
+      
+        <ion-item>
+        
+        <ion-icon name="location-outline" ></ion-icon>
+        <h2>Destino: </h2>
+        <ion-select [(ngModel)]="destino" (ionChange)="calcularCosto()">
+        <ion-label>Comuna 2</ion-label>
+          <ion-select-option value="" disabled selected>Seleccione ciudad de destino</ion-select-option>
+          <ion-select-option value="opcionA" >Viña Del Mar</ion-select-option>
+          <ion-select-option value="opcionB">Valparaíso</ion-select-option>
+          <ion-select-option value="opcionC">La serena</ion-select-option>
+        </ion-select>
+        </ion-item>
+
+
+      <ion-item>
+        <ion-icon name="logo-usd" class="logoUsd"></ion-icon>
+        <ion-label>Costo:</ion-label>  
+        <ion-input [(ngModel)]="costo" type="text" readonly="true"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-row>
+
+      <ion-col>
+        <ion-button id="present-alert" class="ion-button-alert"  (click)="solicitar()">Confirmar datos.</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  
+
+
+
+
+
+</ion-content>

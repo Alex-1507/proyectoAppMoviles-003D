@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close" style="color: red; "></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>informacion Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Usuarios registrados</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card *ngFor="let usuario of dataModal">
+    <ion-card>  
+      <ion-label> Nombre: {{ usuario.nombre }} </ion-label>
+      <ion-label> Apellido: {{ usuario.apellido }}</ion-label>
+      <ion-label> Edad: {{ usuario.edad }}</ion-label>
+      <ion-label> Region: {{ usuario.region }}</ion-label>
+      <ion-label> Comuna: {{ usuario.comuna }}</ion-label>
+    </ion-card>
+  </ion-card>
+</ion-content>

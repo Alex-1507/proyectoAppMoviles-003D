@@ -1,0 +1,44 @@
+.ion-button-registro{
+   /* color: aqua; */
+ /*  padding-top: 380px;
+  padding-left: 20px; */
+  
+  width: 380px;
+  padding-top:5px;
+  padding-left: 20px;
+  
+}
+.ion-button-recuperacion{
+  /* color: aqua; */
+
+ width: 380px;
+ padding-top:5px;
+ padding-left: 20px;
+ 
+}
+
+ion-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  height: 60vh; 
+}
+
+ion-card {
+  color: white;
+  opacity: 0.5;
+  background: blue;
+  margin: 10px;
+
+  --background: red;
+}
+
+@media (prefers-color-scheme: dark) {
+  ion-card {
+    --background: green;
+  }
+}
+
+
+

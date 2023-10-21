@@ -1,0 +1,27 @@
+.input-container {
+    display: flex;
+    gap: 500px; /* Espacio entre los elementos */
+  }
+  ion-input {
+    flex: 1;
+    font-size: 20px;
+    max-width: 414px; 
+  }  
+  h2{
+    font-size:20px
+    
+  }
+  
+  .logoUsd{
+    padding-left: 7px;
+    color: green;
+  
+  }
+
+  ion-card{
+    display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar verticalmente */
+ 
+  }
+

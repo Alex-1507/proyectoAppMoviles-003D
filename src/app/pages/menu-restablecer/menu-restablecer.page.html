@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button (click)="menuPrincipal()" slot="start"> <ion-icon name="arrow-back-outline" ></ion-icon>Menú principal.</ion-button>
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Restablecer password</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+
+    <ng-container> 
+
+      <ion-label class="ion-label-titulo">Ingrese su correo y su nueva contraseña.</ion-label>
+      <ion-card> 
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Email:</ion-label>
+          <ion-input id="correoRecuperacion" [(ngModel)]="email" type="text"></ion-input>
+        </ion-item>
+        <ion-button (click)="mandarCorreo()">Enviar correo</ion-button>
+      </ion-card-content>
+    </ion-card> 
+    
+      
+    
+    </ng-container>
+  
+  
+  
+</ion-content>

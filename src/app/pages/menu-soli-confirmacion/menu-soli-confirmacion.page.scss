@@ -1,0 +1,37 @@
+.tarjeta-credito {
+    display: flex;
+    align-items: center;
+  }
+  
+  .campo-grande,
+  .campo-pequeño {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .campo-grande {
+    width: 70%; /* Tamaño del campo grande */
+  }
+  
+  .campo-pequeño {
+    width: 30%; /* Tamaño del campo pequeño */
+  }
+  h2 {
+    font-size: 24px; /* Tamaño de fuente */
+    color: #313131; /* Color de texto */
+    margin-bottom: 10px; /* Margen inferior para separar del contenido debajo */
+    /* Otros estilos que desees aplicar */
+  }  
+
+  .ion-button-alert{
+    padding-left:100px ;
+    padding-right:100px ;
+    width: 400px;
+  }
+  .icon-tarjetita{
+    padding-right: 5px;
+    color: rgb(15, 7, 240);
+  }

@@ -1,0 +1,90 @@
+<ion-header [translucent]="true" style="background-color: rgb(178, 178, 178);">
+  <ion-toolbar>
+    <ion-button (click)="logOut()" slot="end" >
+      
+      <ion-icon style="margin-top: 1px; " name="log-out-outline" ></ion-icon>
+    </ion-button>
+    <ion-button (click)="toggle()" slot="start">
+      <ion-icon style="margin-top: 1px;" name="menu-outline"></ion-icon>
+    </ion-button>
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu contentId="main-content" >
+  <ion-header>
+    <ion-toolbar>
+      <ion-icon name="close-outline" slot="end" (click)="cerrarMenu()" style="color: red;"></ion-icon>
+      <ion-title>Menu </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" scrollY="false">
+
+    <ion-list>
+      <ion-item (click)="perfil()">
+        <ion-icon name="person-outline" style="padding-right: 10px;" ></ion-icon>
+        <h3>Perfil</h3>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-menu>
+
+
+
+<div class="ion-page" id="main-content" style="background-color: aqua;">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
+</div>
+
+
+<ion-content [fullscreen]="true"  >
+  <ng-container  *ngIf="!loading" >
+  <ng-container *ngFor="let m of menuArray" >
+
+  <ion-card  [routerLink]="m.url"  *ngIf="!m.disabled" class="enabled" (click)="menuSolicitar()">
+    <div class="box">
+      <ion-icon [name]="m.icono"></ion-icon>
+      <h1>{{m.titulo}}</h1>
+    </div>
+  </ion-card>
+  <ion-card  (click)="menuDispo()">
+    <div class="box">
+      <ion-icon name="ellipsis-vertical-outline" ></ion-icon>
+      <h1>Disponibilizar</h1>
+    </div>
+  </ion-card>
+  <ion-card  (click)="agregarVehiculo()">
+    <div class="box">
+      <ion-icon name="add-outline"></ion-icon>
+      <h1>Agregar Vehículo</h1>
+    </div>
+  </ion-card>
+  <ion-card  (click)="agregarUsuario()">
+    <div class="box">
+      <ion-icon name="person-add-outline"></ion-icon>
+      <h1>Agregar Usuario</h1>
+    </div>
+  </ion-card>
+</ng-container>
+</ng-container>
+
+ <ng-container *ngIf="loading">
+<div class="box-skeleton" *ngFor="let skeleton of [1,2,3]" >
+  <ion-skeleton-text [animated]="true" class="skeleton"></ion-skeleton-text>
+</div>
+</ng-container> 
+<ion-img style="height: 200px; width: 200px;  " src="assets/img/welivewelovewelie.jpg"></ion-img>
+</ion-content>
+
+<ion-footer>
+  
+
+</ion-footer>

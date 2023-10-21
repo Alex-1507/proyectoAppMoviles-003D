@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button (click)="volverMenuSoli()" slot="start"> <ion-icon name="arrow-back-outline" ></ion-icon>Menú solicitar.</ion-button>
+    <ion-title>Menú pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-label>Seleccione método de pago.</ion-label>
+  <ion-item>       
+    <ion-icon name="card-outline"class="icon-tarjetita"></ion-icon>
+    <ion-select >
+      <ion-select-option value="" disabled selected>  - Seleccione metodo de pago.</ion-select-option>
+      <ion-select-option value="opcion1">Visa</ion-select-option>
+      <ion-select-option value="opcion2">Visa (Nacional)</ion-select-option>
+      <ion-select-option value="opcion2">Crédito</ion-select-option>
+      <ion-select-option value="opcion2">Prepago</ion-select-option>
+    </ion-select>
+    </ion-item>
+
+    <h2>Datos de tarjeta</h2>
+    <div class="tarjeta-credito">
+      <!-- Campo grande -->
+      <input type="text" id="campoGrande" class="campo-grande" maxlength="16" pattern="\d{16}" placeholder="1234 5678 9012 3456">
+      <!-- Campo pequeño -->
+      <input type="text" id="campoPequeño" class="campo-pequeño" maxlength="3" pattern="\d{3}" placeholder="CVV">
+    </div>
+    
+</ion-content>
+
+<ion-footer>
+  <ion-col >
+    <ion-button id="present-alert" class="ion-button-alert" >Solicitar.</ion-button>
+    <ion-alert
+      trigger="present-alert"
+      header="Alerta"
+      subHeader="Confirmacion."
+      message="Su solicitud se ha efectuado de manera exitosa!."
+      [buttons]="alertButtons" (click)="cargarMenuSoliConfirm()"
+    ></ion-alert>
+  </ion-col>
+</ion-footer>
