@@ -6,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { LocationService } from 'src/app/services/location.service';
 import { Region } from 'src/app/models/region';
 import { Comuna } from 'src/app/models/comuna';
+import { Usuario } from 'src/app/models/usuario';
 
 
 @Component({
@@ -17,14 +18,18 @@ export class LoginRegistroPage implements OnInit {
   
     public alertButtons = ['OK'];
     nombre: string="";
+    apellido: string="";
+    edad: string="";
     email: string="";
     contrasena: string="";
+    cuenta:string=""; 
 
     regiones:Region[]=[];
     comunas:Comuna[]=[];
-    regionSeleccionado:number = 0;
+    regionSeleccionada:number = 0;
     comunaSeleccionada:number = 0;
-
+    regionSeleccionadaId = this.regionSeleccionada;
+    comunaSeleccionadaId = this.comunaSeleccionada;
     constructor(
      private auth:AngularFireAuth, 
     private helper:HelperService,
@@ -45,7 +50,7 @@ export class LoginRegistroPage implements OnInit {
   }
 
   async cargarComuna(){
-    const req = await this.locationService.getComuna(this.regionSeleccionado);
+    const req = await this.locationService.getComuna(this.regionSeleccionada);
     this.comunas = req.data;
   }
 
@@ -57,12 +62,23 @@ export class LoginRegistroPage implements OnInit {
 
   async registro(){
     const loader = await this.helper.showLoading("Cargando");
+    const regionSeleccionadaId = this.regionSeleccionada;
+    const comunaSeleccionadaId = this.comunaSeleccionada;
+    const regionSeleccionada = this.regiones.find(region => region.id === regionSeleccionadaId);
+    const comunaSeleccionada = this.comunas.find(comuna => comuna.id === comunaSeleccionadaId);
     try {
       var user = 
       [
         {
+          
+          nombre:this.nombre,
+          apellido:this.apellido,
+          edad:this.edad,
           correo:this.email,
-          contrasena:this.contrasena
+          contrasena:this.contrasena,
+          cuenta:this.cuenta,
+          region: regionSeleccionada ? regionSeleccionada.nombre : '', // Usar el nombre si se encuentra, de lo contrario cadena vacía
+          comuna: comunaSeleccionada ? comunaSeleccionada.nombre : '',
         }
       ]
       const request = await this.auth.createUserWithEmailAndPassword(this.email,this.contrasena);

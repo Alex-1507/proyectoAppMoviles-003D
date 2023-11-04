@@ -17,6 +17,8 @@ import { InfoUsuarioPage } from 'src/app/modals/info-usuario/info-usuario.page';
 })
 export class AgregarUsuarioPage implements OnInit {
   
+
+  
   regiones:Region[]=[];
   comunas:Comuna[]=[];
   usuarios:Usuario[]=[];
