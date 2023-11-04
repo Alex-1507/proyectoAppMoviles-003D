@@ -1,21 +1,18 @@
 .box{
     display: flex;
     flex-direction: row;
-    align-items: start; /* Centrar verticalmente */
+    align-items: start; 
 
     
     padding-left: 20px;
     padding-right: 20px;
 
 }
-/* .iconosMenu{
-padding-top: 20px;
 
-} */
 
 .ng-container{
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; 
+    justify-content: center; 
 }
 ion-icon{
     margin-top: 13px;
@@ -32,15 +29,29 @@ ion-card{
     border-color: red;
 }
 ion-content {
-    background-color: red;
+    --background: linear-gradient(to right top, #011f4b, #00558c, #008d9e, #00c275, #a8eb12);
   }
+
+
 h1{
-    color: #383838;
+    color: #323232;
     text-align: start;
     justify-content: start;
     margin-left: 15px;
     font-size: 20px;
     align-items: center;
+   // font-family: fuentePruebas;
  
 }
 
+
+h3{
+    font-family:  fuentePruebas;
+    font-size:  30px ;
+    color: rgb(8, 8, 8);
+    
+    
+}
+ion-header{
+    --background: rgb(181, 181, 181);
+}
