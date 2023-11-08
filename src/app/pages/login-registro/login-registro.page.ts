@@ -19,6 +19,7 @@ export class LoginRegistroPage implements OnInit {
     public alertButtons = ['OK'];
     nombre: string="";
     apellido: string="";
+    genero:string="";
     edad: string="";
     email: string="";
     contrasena: string="";

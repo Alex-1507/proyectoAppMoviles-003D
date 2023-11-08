@@ -46,7 +46,7 @@ h1{
 
 
 h3{
-    font-family:  fuentePruebas;
+    font-family: fuentePruebasMediumSemiBold;
     font-size:  30px ;
     color: rgb(8, 8, 8);
     
@@ -54,4 +54,25 @@ h3{
 }
 ion-header{
     --background: rgb(181, 181, 181);
+}
+
+ion-item{
+    
+    color: rgb(5, 5, 5);
+    font-size: 25px;
+    --background: rgba(255, 255, 255, 0.14);
+    --border-color: rgba(255, 0, 0, 0);
+    font-family:  fuentePruebas;
+
+}
+.mensajeBienvenida{
+    font-family:  fuentePruebasMediumSemiBold;
+    
+
+}
+.mensajeCuenta{
+    font-family:  fuentePruebasMediumSemiBold;
+    justify-content: end;
+    
+
 }

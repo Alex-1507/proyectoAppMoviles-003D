@@ -6,6 +6,7 @@ import { Menu } from 'src/app/models/menu';
 import { HelperService } from 'src/app/services/helper.service';
 import { Device } from '@capacitor/device';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { StorageService } from 'src/app/services/storage.service';
 
 
 @Component({
@@ -20,13 +21,16 @@ export class MenuPage implements OnInit, OnDestroy {
 
   menuArray:Menu[]=[];
   loading:boolean =true;
+  usuario:any;
 
   constructor(
     private router:Router,
     private animationCtrl: AnimationController,
     private menuCtrl:MenuController,
     private helper:HelperService,
-    private auth: AngularFireAuth
+    private auth: AngularFireAuth,
+    private storage:StorageService,
+
 
     ) { }
 
@@ -70,7 +74,16 @@ cerrarMenu(){
   this.menuCtrl.close();
 }
 
+cargarMensaje(){
 
+}
+  async cargarInformacionUsuario(){
+    console.log("property", this.storage.userCorreo);
+    var userEmail =await this.auth.currentUser;
+    this.usuario = (await this.storage.obtenerUsuario()).filter(e => e.correo == userEmail?.email);
+    console.log("USUARIO FILTRADO",this.usuario);
+    
+  }
     ngAfterViewInit() {
       this.animation = this.animationCtrl
         .create()
@@ -104,14 +117,17 @@ cerrarMenu(){
   ngOnInit() {
     this.cargarMenu();
     console.table(this.menuArray);
-    /* console.error("Soy un error!!!!")    */ 
+
     console.log("inicio del componente");
     setTimeout(this.simularCargaMenu,1500);
     this.dispositivo();
+    this.cargarInformacionUsuario();
+
   }
 
   ionViewWillEnter(){
     console.log("Entrando a la vista");
+    this.cargarInformacionUsuario();
   }
 
   ionViewDidEnter(){
@@ -127,7 +143,7 @@ cerrarMenu(){
   }
 
   async logOut(){
-    //
+  
     var confirmar = await this.helper.showConfirm("Desea cerrar la sesión actual?","Confirmar","Cancelar");
     if (confirmar == true) {
       await this.auth.signOut();
@@ -160,9 +176,6 @@ cerrarMenu(){
   cambiarContra(){
     this.router.navigateByUrl("menu-restablecer")
   }
-/*   menuDos(){
-    var nom = "pgy4121";
-    this.router.navigateByUrl("menu-dos");
-  } */
 
+  
 }
