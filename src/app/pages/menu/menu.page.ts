@@ -30,6 +30,8 @@ export class MenuPage implements OnInit, OnDestroy {
     private helper:HelperService,
     private auth: AngularFireAuth,
     private storage:StorageService,
+    private storageService:StorageService
+
 
 
     ) { }
@@ -132,6 +134,11 @@ cargarMensaje(){
 
   ionViewDidEnter(){
     console.log("Vista cargada");
+    this.cargarInformacionUsuario();
+
+  }
+  async viewUser() {
+    console.log("Usuarios registrados.", this.storageService.obtenerUsuario());
   }
 
   ionViewWillLeave(){

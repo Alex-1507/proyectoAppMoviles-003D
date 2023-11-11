@@ -7,5 +7,7 @@ export const environment = {
     storageBucket: "proyectomobile-ec18f.appspot.com",
     messagingSenderId: "176052861634",
     appId: "1:176052861634:web:25851c09b3320f2a47d95b"
-  }
+  },
+  apiUrl:"https://dev.matiivilla.cl/duoc/location/"
+
 };
