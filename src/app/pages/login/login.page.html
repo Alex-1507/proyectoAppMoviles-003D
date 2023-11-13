@@ -1,29 +1,26 @@
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" scrollY="false">
 
-  <ng-container >
-    <ion-card-content >
+ 
+    <ion-card>
       <ion-item >
-        <ion-label>Email:</ion-label>
+        <ion-label class="login">Email:</ion-label>
         <ion-input [(ngModel)]="email" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Contraseña:</ion-label>
+        <ion-label class="login">Contraseña:</ion-label>
         <ion-input [(ngModel)]="contrasena" type="password"></ion-input>
       </ion-item>
-
-      <ion-card  #card>
         <ion-row>
           <ion-col>
             <ion-button (click)="login()" expand="full">Acceder</ion-button>
           </ion-col>
         </ion-row>
       </ion-card>
-    </ion-card-content>   
+     
   
 
-</ng-container>
-  <!-- <ion-button (click)="play()">Play</ion-button> -->
+
 
  
 

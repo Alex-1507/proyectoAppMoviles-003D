@@ -1,28 +1,24 @@
-.ion-tittle-correo{
-    color: red;
-    padding-top: 5px;
-}
- 
 
+
+ion-content {
+    --background: linear-gradient(to top, #2a2a2a, #2f2e42, #2f325c, #273777, #023c94);
+}
+
+ion-card{
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.titulo{
+    font-family:  fuentePruebasMediumSemiBold;
+    font-size: 18px;
+}
 .ion-label-titulo{
-    margin-top: 50px;
-   
-}
-h1{
-
-    padding-left: 120px;
-    margin-top: 90px;
-    margin-bottom: 5px;
-    color: rgb(0, 0, 0);
+    font-family:  fuentePruebasMediumSemiBold;
+    color: rgb(175, 175, 175)
 }
 
-ion-item{
-    margin-top: 1px;
-}
-
-.ion-button-alert{
-    padding-right:100px;
-    padding-left:100px ;
-    width: 402px;
+ion-button{
+    font-family:  fuentePruebasRegular;
 
 }
+

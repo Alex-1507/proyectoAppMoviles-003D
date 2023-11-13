@@ -62,11 +62,18 @@ export class LoginRegistroPage implements OnInit {
   }
 
   async registro(){
+    
     const loader = await this.helper.showLoading("Cargando");
+    if (!this.nombre || !this.apellido || !this.edad || !this.email || !this.contrasena || !this.cuenta || !this.regionSeleccionada || !this.comunaSeleccionada) {
+      await loader.dismiss();
+      await this.helper.showAlert("Por favor, complete todos los campos", "Error");
+      return; 
+    }
     const regionSeleccionadaId = this.regionSeleccionada;
     const comunaSeleccionadaId = this.comunaSeleccionada;
     const regionSeleccionada = this.regiones.find(region => region.id === regionSeleccionadaId);
     const comunaSeleccionada = this.comunas.find(comuna => comuna.id === comunaSeleccionadaId);
+    
     try {
       var user = 
       [
@@ -78,7 +85,7 @@ export class LoginRegistroPage implements OnInit {
           correo:this.email,
           contrasena:this.contrasena,
           cuenta:this.cuenta,
-          region: regionSeleccionada ? regionSeleccionada.nombre : '', // Usar el nombre si se encuentra, de lo contrario cadena vacía
+          region: regionSeleccionada ? regionSeleccionada.nombre : '', // Usar el nombre si se encuentra, de lo contrario vacío
           comuna: comunaSeleccionada ? comunaSeleccionada.nombre : '',
         }
       ]
@@ -96,6 +103,15 @@ export class LoginRegistroPage implements OnInit {
         await loader.dismiss();
         await this.helper.showAlert("El largo de la contraseña es incorrecto","Error");
       }
+      if(error.code == 'auth/weak-password'){
+        await loader.dismiss();
+        await this.helper.showAlert("El largo de la contraseña es incorrecto","Error");
+      }
+      
+
+
+
+
       
     }
   }

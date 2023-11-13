@@ -7,3 +7,24 @@
 ion-item{
     height: 33px;
 }
+ion-content {
+    --background: linear-gradient(to top, #2a2a2a, #2f2e42, #2f325c, #273777, #023c94);
+}
+ion-card{
+    background-color: rgba(255, 0, 0, 0);
+}
+ion-item{
+    background-color: rgba(253, 253, 253, 0.576);
+    
+}
+ion-header{
+    --background:red;
+}
+.input{
+    font-family:  fuentePruebasMedium;
+    
+}
+.titulo{
+    font-family:  fuentePruebasMediumSemiBold;
+    font-size: 25px;
+}
