@@ -36,6 +36,10 @@ export class AgregarVehiculoPage implements OnInit {
   menuPrincipal(){
     this.router.navigateByUrl("menu");
   }
+  patenteExistente(patente: string): boolean {
+    // Verifica si la patente ya existe en la lista de vehículos
+    return this.vehiculos.some((vehiculo) => vehiculo.patente === patente);
+  }
   async agregarVehiculo() {
 
     var confirmar = await this.helper.showConfirm("¿Desea agregar este vehiculo?","Confirmar","Cancelar");
@@ -67,7 +71,11 @@ export class AgregarVehiculoPage implements OnInit {
     if (patente.length < 2) {
       errorMessage += 'Ingrese una patente válida.\n';
     }
-  
+    if (patente.length < 2) {
+      errorMessage += 'Ingrese una patente válida.\n';
+    } else if (this.patenteExistente(patente)) {
+      errorMessage += 'La patente ya existe.\n';
+    }
     if (errorMessage !== '') {
       await this.helper.showAlert(`Error:\n${errorMessage}`, "Error");
       return; 

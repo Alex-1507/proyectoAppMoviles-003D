@@ -27,7 +27,6 @@
         </ion-item>
       
         <ion-item>
-        
         <ion-icon name="location-outline" ></ion-icon>
         <h2>Destino: </h2>
         <ion-select [(ngModel)]="destino" (ionChange)="calcularCosto()">
@@ -38,6 +37,17 @@
           <ion-select-option value="opcionC">La serena</ion-select-option>
         </ion-select>
         </ion-item>
+
+ <ion-item>
+  <ion-icon name="location-outline"></ion-icon>
+  <h2>Vehiculo: </h2>
+  <ion-select  >
+    <ion-select-option value="" disabled selected>Seleccione un vehiculo</ion-select-option>
+    <ion-select-option *ngFor="let vehiculo of vehiculos" [value]="vehiculo.patente">
+      {{ vehiculo.marca }} {{ vehiculo.modelo }} - {{ vehiculo.anio }}-{{vehiculo.patente}}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
 
 
       <ion-item>

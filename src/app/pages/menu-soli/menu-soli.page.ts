@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Preferences } from '@capacitor/preferences';
+import { Informacion } from 'src/app/models/informacion';
 import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
@@ -13,17 +15,26 @@ export class MenuSoliPage implements OnInit {
   origen:string = "";
   destino:string = "";
   costo:number =0;
-
+  vehiculos: Informacion[] = [];
   constructor(
     private router:Router,
     private helper:HelperService
-    ) { }
+    ) {
+      this.loadVehiculos();
+    }
 
   ngOnInit() {
   }
 
   menuSoliConfirm(){
     this.router.navigateByUrl("menu-soli-confirmacion")
+  }
+  async loadVehiculos() {
+    const vehiculosString = await Preferences.get({ key: 'vehiculos' });
+
+    if (vehiculosString && vehiculosString.value) {
+      this.vehiculos = JSON.parse(vehiculosString.value);
+    }
   }
 
  async solicitar(){
