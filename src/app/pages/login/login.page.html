@@ -1,9 +1,10 @@
 
-<ion-content [fullscreen]="true" scrollY="false">
+<ion-content [fullscreen]="true" scrollY="true">
 
  
     <ion-card>
       <ion-item >
+
         <ion-label class="login">Email:</ion-label>
         <ion-input [(ngModel)]="email" type="text"></ion-input>
       </ion-item>
@@ -26,10 +27,10 @@
 
 </ion-content>
 
-<ion-footer>
+
   
     <ion-button (click)="loginRegistro()" expand="block" class="ion-button-registro" fill="outline">¿No tienes cuenta? Regístrate aquí.</ion-button>
     <ion-button (click)="loginRecuperacion()" expand="block" class="ion-button-recuperacion" fill="outline">¿Olvidaste tu contraseña? Haz click aquí.</ion-button>
  
-</ion-footer>
+
 

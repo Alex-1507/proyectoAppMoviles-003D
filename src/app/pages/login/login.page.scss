@@ -1,38 +1,12 @@
-.ion-button-registro{
-   /* color: aqua; */
- /*  padding-top: 380px;
-  padding-left: 20px; */
-  
-  width: 380px;
-  padding-top:5px;
-  padding-left: 20px;
-  
-}
-.ion-button-recuperacion{
-  /* color: aqua; */
-
- width: 380px;
- padding-top:5px;
- padding-left: 20px;
- 
-}
-
-ion-card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
-  height: 60vh; 
-}
 ion-content {
   --background: linear-gradient(to top, #2a2a2a, #2f2e42, #2f325c, #273777, #023c94);
 }
+
 ion-card {
   color: white;
   opacity: 1;
   background: blue;
-  margin-top: 220px;
-
+  margin-top: 37%;
   --background: rgb(11, 11, 11);
 }
 
@@ -44,12 +18,17 @@ ion-card {
   --background: rgb(187, 187, 187);
   color: rgb(9, 9, 9);
   font-family:  fuentePruebasMedium;
+  width: 98%;
+  padding-top:5px;
+ }
   
-}
+
 .ion-button-registro{
   --background: rgb(187, 187, 187);
   color: rgb(9, 9, 9);
   font-family:  fuentePruebasMedium;
+  width: 98%;
+  padding-top:5px; 
 }
 
 @media (prefers-color-scheme: dark) {
