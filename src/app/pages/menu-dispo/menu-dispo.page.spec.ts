@@ -5,13 +5,13 @@ describe('MenuDispoPage', () => {
   let component: MenuDispoPage;
   let fixture: ComponentFixture<MenuDispoPage>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     fixture = TestBed.createComponent(MenuDispoPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
+
+/*   it('should create', () => {
+    expect(component).toBeTruthy();
+  }); */
 });

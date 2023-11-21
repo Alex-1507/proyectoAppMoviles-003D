@@ -58,8 +58,7 @@ export class LoginPage implements OnInit {
 
 
   async login(){
-    //pgy4121003d@duoc.cl
-    //123456
+    
     const loader = await this.helperService.showLoading("Cargando");
     if (this.email == "") {
       this.helperService.showAlert("Debe ingresar un email.","Error");
@@ -83,10 +82,6 @@ export class LoginPage implements OnInit {
       this.helperService.showAlert("Verifique sus credenciales","Error")
       
     }
-
-
-
-    
   }
 
 

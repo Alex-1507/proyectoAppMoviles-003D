@@ -6,11 +6,19 @@ describe('HelperService', () => {
   let service: HelperService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers:[HelperService]
+    });
     service = TestBed.inject(HelperService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+  it('Probando el metodo de suma xde', () => {
+    const num1 = 500;
+    const num2 = 800;
+
+    const resultado = service.sumar(num1,num2);
+
+    expect(resultado).toBe(1300);
+
+  }); 
 });
