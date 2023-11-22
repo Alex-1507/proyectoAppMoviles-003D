@@ -11,7 +11,12 @@ describe('LoginPage', () => {
     fixture.detectChanges();
   });
 
-  it('Test error de login', () => {
+  it('Se deberia crear el componente del login', () => {
     expect(component).toBeTruthy();
+  });
+  
+  it('Se deberia inicializar el componente con los campos vacios en los input', () => {
+    expect(component.email).toBe('');
+    expect(component.contrasena).toBe('');
   });
 });
