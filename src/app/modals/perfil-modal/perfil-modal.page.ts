@@ -21,7 +21,7 @@ export class PerfilModalPage implements OnInit {
     private auth:AngularFireAuth) { }
 
   ngOnInit() {
-    console.log("Información modal", this.dataModal);
+    
     
   }
   close(){

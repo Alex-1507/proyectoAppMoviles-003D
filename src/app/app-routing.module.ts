@@ -41,10 +41,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login-recuperacion/login-recuperacion.module').then( m => m.LoginRecuperacionPageModule)
   },
   {
-    path: 'login-recuperacion-correo',
-    loadChildren: () => import('./pages/login-recuperacion-correo/login-recuperacion-correo.module').then( m => m.LoginRecuperacionCorreoPageModule)
-  },
-  {
     path: 'menu-soli-confirmacion',
     loadChildren: () => import('./pages/menu-soli-confirmacion/menu-soli-confirmacion.module').then( m => m.MenuSoliConfirmacionPageModule)
   },
@@ -56,10 +52,7 @@ const routes: Routes = [
     path: 'agregar-vehiculo',
     loadChildren: () => import('./pages/agregar-vehiculo/agregar-vehiculo.module').then( m => m.AgregarVehiculoPageModule)
   },
-  {
-    path: 'agregar-usuario',
-    loadChildren: () => import('./pages/agregar-usuario/agregar-usuario.module').then( m => m.AgregarUsuarioPageModule)
-  },
+
   {
     path: 'menu-restablecer',
     loadChildren: () => import('./pages/menu-restablecer/menu-restablecer.module').then( m => m.MenuRestablecerPageModule)

@@ -18,6 +18,7 @@ export class HelperService {
       var result = val1 + val2;
       return result;
     }
+    
 
 
     async showAlert(msg:string,title:string){

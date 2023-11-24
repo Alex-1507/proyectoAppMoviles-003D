@@ -176,9 +176,7 @@ cargarMensaje(){
     this.router.navigateByUrl("agregar-vehiculo")
   }
 
-  agregarUsuario(){
-    this.router.navigateByUrl("agregar-usuario")
-  }
+  
   
   cambiarContra(){
     this.router.navigateByUrl("menu-restablecer")
