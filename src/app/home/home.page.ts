@@ -8,11 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  capturandoNombre:string = "";
-  constructor(private activatedRoute:ActivatedRoute) {}
+
+  constructor( ) {}
 
   ngOnInit(): void {
-    this.capturandoNombre = this.activatedRoute.snapshot.params['nombre'];
-    console.log("Parametro home",this.capturandoNombre);    
+   
   }
 }
