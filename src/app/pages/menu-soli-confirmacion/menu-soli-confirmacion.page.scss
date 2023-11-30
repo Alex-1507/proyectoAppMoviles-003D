@@ -35,3 +35,17 @@
     padding-right: 5px;
     color: rgb(15, 7, 240);
   }
+  .boton-registro{
+    
+    width: 200px;
+    align-content: center;
+    margin-left: 100px;
+  }
+
+  .invalid-input {
+    border: 2px solid red;
+  }
+
+  ion-content {
+    --background: linear-gradient(to right top, #011f4b, #00558c, #008d9e, #00c275, #a8eb12);
+  }

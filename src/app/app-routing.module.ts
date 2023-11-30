@@ -68,7 +68,11 @@ const routes: Routes = [
   {
     path: 'info-usuario',
     loadChildren: () => import('./modals/info-usuario/info-usuario.module').then( m => m.InfoUsuarioPageModule)
+  },  {
+    path: 'qr',
+    loadChildren: () => import('./pages/qr/qr.module').then( m => m.QrPageModule)
   },
+
 
 ];
 

@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-label>Seleccione método de pago.</ion-label>
+  <ion-label style="margin-top: 20%;">Seleccione método de pago.</ion-label >
   <ion-item>       
     <ion-icon name="card-outline"class="icon-tarjetita"></ion-icon>
     <ion-select >
@@ -32,13 +32,6 @@
 
 <ion-footer>
   <ion-col >
-    <ion-button id="present-alert" class="ion-button-alert" >Solicitar.</ion-button>
-    <ion-alert
-      trigger="present-alert"
-      header="Alerta"
-      subHeader="Confirmacion."
-      message="Su solicitud se ha efectuado de manera exitosa!."
-      [buttons]="alertButtons" (click)="cargarMenuSoliConfirm()"
-    ></ion-alert>
+    <ion-button id="present-alert" class="ion-button-alert" (click)="cargarMenuSoliConfirm()" >Solicitar.</ion-button>
   </ion-col>
 </ion-footer>

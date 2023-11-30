@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class MenuDispoPage implements OnInit {
 
-
+patente:string="";
   origen:string = "";
   destino:string = "";
   costo:number =0;
@@ -38,6 +38,10 @@ export class MenuDispoPage implements OnInit {
       this.costo = 0; // Costo por defecto si no se selecciona ninguna opción
     }
   }
+
+validarCampos(){
+
+}
 
 
 }

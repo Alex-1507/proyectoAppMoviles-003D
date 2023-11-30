@@ -182,5 +182,9 @@ cargarMensaje(){
     this.router.navigateByUrl("menu-restablecer")
   }
 
+  irQr(){
+    this.router.navigateByUrl("qr")
+  }
+
   
 }

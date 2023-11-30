@@ -69,12 +69,6 @@
       <h1>Agregar Vehículo</h1>
     </div>
   </ion-card>
-  <ion-card>
-    <div class="box">
-      <ion-icon name="person-add-outline"></ion-icon>
-      <h1>Agregar Usuario</h1>
-    </div>
-  </ion-card>
 </ng-container>
 </ng-container>
 
@@ -86,8 +80,16 @@
 <ion-img style="height: 200px; width: 200px;  " src="assets/img/welivewelovewelie.jpg"></ion-img>
 </ion-content>
 
+
 <ion-footer>
-  
-    <ion-label *ngFor="let i of usuario" class="mensajeCuenta" style="color: rgb(194, 194, 194);"> Tipo de cuenta: {{i.cuenta}}</ion-label >
-  
+  <ion-toolbar style="--background: rgba(0, 0, 255, 0); ">
+    
+    <ion-buttons slot="end">
+      <ion-button class="botonqr" (click)="irQr()">
+        <ion-icon name="qr-code-outline" style="margin-bottom: 15px;color: rgb(255, 255, 255);"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-label *ngFor="let i of usuario" class="mensajeCuenta" style="color: rgb(194, 194, 194);"> Tipo de cuenta: {{ i.cuenta }}</ion-label>
+  </ion-toolbar>
 </ion-footer>

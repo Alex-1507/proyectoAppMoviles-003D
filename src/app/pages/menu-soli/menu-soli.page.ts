@@ -4,6 +4,7 @@ import { Preferences } from '@capacitor/preferences';
 import { Informacion } from 'src/app/models/informacion';
 import { HelperService } from 'src/app/services/helper.service';
 
+
 @Component({
   selector: 'app-menu-soli',
   templateUrl: './menu-soli.page.html',
@@ -15,6 +16,8 @@ export class MenuSoliPage implements OnInit {
   origen:string = "";
   destino:string = "";
   costo:number =0;
+  vehiculo:string="";
+  
   vehiculos: Informacion[] = [];
   constructor(
     private router:Router,
@@ -64,6 +67,24 @@ export class MenuSoliPage implements OnInit {
     } else {
       this.costo = 0; // Costo por defecto si no se selecciona ninguna opción
     }
+  } 
+
+  async solicitarVehiculo(){
+    const loader = await this.helper.showLoading("Cargando");
+    if (!this.origen || !this.destino ) {
+      await loader.dismiss();
+      await this.helper.showAlert("Por favor, complete todos los campos", "Error");
+      return; 
+    }else{
+      var confirmar = await this.helper.showConfirm("Presione confirmar para ir al portal de pagos.","Confirmar","Cancelar");
+    if (confirmar == true) {
+    this.router.navigateByUrl("menu-soli-confirmacion");
   }
+    }
+  }
+
+
+
+
 
 }
